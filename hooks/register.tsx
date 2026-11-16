@@ -33,7 +33,8 @@ const HELP = [
 ].join('\n')
 
 export const register: Register = on => {
-  let isOn = true
+  const getOn = async ($: { store: { get: (k: string) => Promise<unknown> } }) =>
+    ((await $.store.get('on')) as boolean | undefined) ?? true
   let speaking: { return?: () => unknown } | undefined
 
   const stop = () => {
@@ -73,7 +74,8 @@ export const register: Register = on => {
       return { text: `Style set to ${arg}. It applies to the next reply.` }
     }
 
-    isOn = cmd === 'on' ? true : cmd === 'off' ? false : !isOn
+    const isOn = cmd === 'on' ? true : cmd === 'off' ? false : !(await getOn($))
+    await $.store.set('on', isOn)
     if (!isOn) stop()
     return { text: `Spoken replies are ${isOn ? 'on' : 'off'}.` }
   })
@@ -83,7 +85,7 @@ export const register: Register = on => {
 
   on('turn.complete', async ($, e, next) => {
     const done = await next(e)
-    if (!isOn || e.agentId || e.reason !== 'answer' || !e.answer.trim()) return done
+    if (!(await getOn($)) || e.agentId || e.reason !== 'answer' || !e.answer.trim()) return done
     stop()
 
     const voice = (await $.store.get('voice')) as string | undefined

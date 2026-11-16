@@ -72,7 +72,7 @@ Spoken replies are on by default once installed. Commands:
 | `/assistant styles` | List character styles |
 | `/assistant style <name>` | Pick a style: calm, cheerful, serious, storyteller, pirate, robot, coach |
 
-Voice and style are remembered across sessions. Sending a new prompt cuts off speech.
+On/off, voice and style are remembered across sessions, so `/assistant off` stays off in every Claude Code session until you turn it back on. Sending a new prompt cuts off speech.
 
 ### Voices
 
