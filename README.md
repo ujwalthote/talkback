@@ -32,14 +32,32 @@ Tested on Windows 11. macOS and Linux are untested.
 
 ## Setup
 
-Put your key in a file named `.claude-voice.env` in your home folder:
+Get a free key at https://aistudio.google.com, then put it in a file named
+`.claude-voice.env` in your home folder (`C:\Users\<you>` on Windows, `~` on macOS and Linux):
 
 ```
 GEMINI_API_KEY=your-key-here
 ```
 
+Create the file from a terminal (replace the placeholder with your key):
+
+```powershell
+# Windows PowerShell
+Set-Content -Path "$HOME\.claude-voice.env" -Value "GEMINI_API_KEY=your-key-here"
+```
+
+```sh
+# macOS / Linux
+echo "GEMINI_API_KEY=your-key-here" > ~/.claude-voice.env
+```
+
 Optional lines: `VOICE=Aoede`, `LIVE_MODEL=gemini-3.8-live`, `VERBATIM_MAX=400`.
 The key lives outside the plugin, so it is never part of the repository.
+
+**Without a key, replies stay silent.** There is no on-screen error; the helper only writes
+`GEMINI_API_KEY not set` to Claude Code's debug log (`claude --debug`). If you hear nothing,
+check that the file exists, is named exactly `.claude-voice.env`, and holds a valid key.
+Keep the file private and never commit it.
 
 ## Usage
 
