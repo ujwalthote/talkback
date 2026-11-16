@@ -9,6 +9,16 @@ work hands-free: speak your prompt, listen to the answer.
 - Choose a voice (women's and men's) and a character style (calm, cheerful, pirate...).
 - No microphone and no browser: it only plays audio on your default speakers.
 
+## Try it out
+
+It takes about two minutes, and a free Gemini key is all you need:
+
+1. Install the plugin (see [Install](#install)).
+2. Add your free key (see [Setup](#setup)).
+3. Ask Claude Code anything and listen to the answer.
+
+If you like it, a star on the repo helps others find it.
+
 ## Install
 
 In a Claude Code terminal session:
