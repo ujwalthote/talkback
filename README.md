@@ -50,11 +50,23 @@ Spoken replies are on by default once installed. Commands:
 | `/assistant` | Toggle spoken replies |
 | `/assistant on` / `off` / `stop` | Turn on, turn off, or cut off the current speech |
 | `/assistant voices` | List voices |
-| `/assistant voice woman` / `man` / `<name>` | Pick a voice, for example `kore` or `puck` |
+| `/assistant voice woman` / `man` / `<name>` | Pick a voice. `woman` picks Aoede and `man` picks Puck |
 | `/assistant styles` | List character styles |
 | `/assistant style <name>` | Pick a style: calm, cheerful, serious, storyteller, pirate, robot, coach |
 
 Voice and style are remembered across sessions. Sending a new prompt cuts off speech.
+
+### Voices
+
+Use `/assistant voice <name>` with any of these (Gemini's prebuilt voices, grouped by how
+they sound to the author; Google does not label them by gender):
+
+| Group | Voices |
+| --- | --- |
+| Women's | `aoede`, `kore`, `leda`, `zephyr`, `callirrhoe`, `sulafat` |
+| Men's | `puck`, `charon`, `fenrir`, `orus`, `enceladus`, `algieba` |
+
+Example: `/assistant voice charon`. The change applies from the next reply.
 
 ## How it works
 
