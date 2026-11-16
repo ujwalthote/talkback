@@ -32,9 +32,11 @@ const HELP = [
   '/assistant style <name>',
 ].join('\n')
 
+async function getOn($: { store: { get: (k: string) => Promise<unknown> } }): Promise<boolean> {
+  return ((await $.store.get('on')) as boolean | undefined) ?? true
+}
+
 export const register: Register = on => {
-  const getOn = async ($: { store: { get: (k: string) => Promise<unknown> } }) =>
-    ((await $.store.get('on')) as boolean | undefined) ?? true
   let speaking: { return?: () => unknown } | undefined
 
   const stop = () => {
