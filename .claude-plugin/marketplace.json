@@ -1,0 +1,6 @@
+{
+  "name": "talkback",
+  "owner": { "name": "ujwalthote" },
+  "description": "Spoken replies for Claude Code using the Gemini Live API",
+  "plugins": [{ "name": "talkback", "source": "./" }]
+}
