@@ -1,6 +1,6 @@
 {
   "name": "talkback",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Speaks Claude Code replies aloud using Gemini Live, with choice of voice and style. Pair it with /voice for hands-free use.",
   "license": "MIT",
   "author": {
